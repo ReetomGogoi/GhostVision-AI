@@ -1,0 +1,3 @@
+model,images_evaluated,dice,iou,precision,recall
+Baseline,2026,0.5624,0.4392,0.5869,0.652
+Augmented,2026,0.5574,0.436,0.6215,0.6145
