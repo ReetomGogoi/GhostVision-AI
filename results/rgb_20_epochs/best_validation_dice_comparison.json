@@ -1,0 +1,26 @@
+{
+  "history_sources": {
+    "Baseline": "/content/drive/MyDrive/GhostVision_AI/RGB_Checkpoints/Resume_Epoch_06_20/Baseline/history_through_epoch_20.json",
+    "Augmented": "/content/drive/MyDrive/GhostVision_AI/RGB_Checkpoints/Resume_Epoch_06_20/Augmented/history_through_epoch_20.json"
+  },
+  "best_validation_dice_comparison": [
+    {
+      "model": "Baseline",
+      "best_epoch": 19,
+      "train_loss": 0.2456455017652428,
+      "validation_loss": 0.6871784172560039,
+      "train_dice": 0.835447173020993,
+      "validation_dice": 0.568653006302683,
+      "validation_iou": 0.4575925481162573
+    },
+    {
+      "model": "Augmented",
+      "best_epoch": 7,
+      "train_loss": 0.5639565086852737,
+      "validation_loss": 0.6413554415891045,
+      "train_dice": 0.6293577882978652,
+      "validation_dice": 0.5737559269917639,
+      "validation_iou": 0.45553360722566905
+    }
+  ]
+}
