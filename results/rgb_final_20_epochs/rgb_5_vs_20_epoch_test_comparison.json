@@ -1,0 +1,49 @@
+{
+  "notice": "Earlier values are reported to four decimals; new values use full available precision. The test split had already been evaluated.",
+  "rows": [
+    {
+      "model": "Baseline",
+      "evaluation": "Earlier 5-epoch experiment",
+      "checkpoint_epoch": 3,
+      "numeric_precision": "reported to 4 decimals",
+      "test_set_status": "previously evaluated; not newly untouched",
+      "dice": 0.5624,
+      "iou": 0.4392,
+      "precision": 0.5869,
+      "recall": 0.652
+    },
+    {
+      "model": "Baseline",
+      "evaluation": "Completed 20-epoch experiment",
+      "checkpoint_epoch": 19,
+      "numeric_precision": "full available precision",
+      "test_set_status": "previously evaluated; not newly untouched",
+      "dice": 0.5549166050150269,
+      "iou": 0.4419773613771117,
+      "precision": 0.6606122738399487,
+      "recall": 0.5703256575635249
+    },
+    {
+      "model": "Augmented",
+      "evaluation": "Earlier 5-epoch experiment",
+      "checkpoint_epoch": 5,
+      "numeric_precision": "reported to 4 decimals",
+      "test_set_status": "previously evaluated; not newly untouched",
+      "dice": 0.5574,
+      "iou": 0.436,
+      "precision": 0.6215,
+      "recall": 0.6145
+    },
+    {
+      "model": "Augmented",
+      "evaluation": "Completed 20-epoch experiment",
+      "checkpoint_epoch": 7,
+      "numeric_precision": "full available precision",
+      "test_set_status": "previously evaluated; not newly untouched",
+      "dice": 0.5644200814323388,
+      "iou": 0.4446444857979574,
+      "precision": 0.625163420578805,
+      "recall": 0.6062554309304586
+    }
+  ]
+}

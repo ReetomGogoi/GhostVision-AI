@@ -1,0 +1,5 @@
+model,evaluation,checkpoint_epoch,numeric_precision,test_set_status,dice,iou,precision,recall
+Baseline,Earlier 5-epoch experiment,3,reported to 4 decimals,previously evaluated; not newly untouched,0.56240000000000001,0.43919999999999998,0.58689999999999998,0.65200000000000002
+Baseline,Completed 20-epoch experiment,19,full available precision,previously evaluated; not newly untouched,0.55491660501502693,0.44197736137711169,0.66061227383994869,0.57032565756352493
+Augmented,Earlier 5-epoch experiment,5,reported to 4 decimals,previously evaluated; not newly untouched,0.55740000000000001,0.436,0.62150000000000005,0.61450000000000005
+Augmented,Completed 20-epoch experiment,7,full available precision,previously evaluated; not newly untouched,0.56442008143233879,0.4446444857979574,0.62516342057880503,0.60625543093045864
