@@ -42,9 +42,7 @@ checkpoint metadata, and incompatible weights raise specific subclasses of
 
 ## Application and thermal integration
 
-No thermal module or thermal API exists on the current `feature/rgb` branch.
-`ghostvision.adapters.SegmentationAdapter` is therefore an adapter contract,
-not a claim about an existing thermal interface. It returns a modality-neutral
+`ghostvision.adapters.SegmentationAdapter` returns an
 `ApplicationSegmentationResult` containing a mask, overlay, modality, model
 name, and metadata.
 
@@ -60,9 +58,6 @@ rgb_backend = RGBSegmentationAdapter(
 application_result = rgb_backend.predict("/data/user-image.jpg")
 ```
 
-Once the thermal module is available, a thermal-specific adapter can implement
-the same `predict(image_path)` contract. The application can then select RGB or
-thermal backends without coupling either model's preprocessing, checkpoint
-format, or dependencies. Full integration remains pending until the thermal
-module's actual input requirements, result types, and checkpoint lifecycle are
-available.
+The first application integration layer and the distinct thermal detection
+result are documented in
+[`application_integration.md`](application_integration.md).
