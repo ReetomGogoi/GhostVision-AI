@@ -1,0 +1,17 @@
+{
+  "model": "augmented",
+  "checkpoint_epoch": 7,
+  "architecture": "Unet-ResNet34",
+  "validation_dice_recorded": 0.5737559269917639,
+  "mask_shape": [
+    872,
+    2979
+  ],
+  "overlay_shape": [
+    872,
+    2979,
+    3
+  ],
+  "real_checkpoint_inference": "PASSED",
+  "note": "Validation Dice is from the saved checkpoint, not this image."
+}
