@@ -1,0 +1,81 @@
+{
+  "model": "YOLO11n",
+  "checkpoint": "best.pt",
+  "test_image": "Wiki_deer.jpg",
+  "confidence_threshold": 0.25,
+  "animal_count": 7,
+  "detections": [
+    {
+      "class": "animal",
+      "confidence": 0.5256,
+      "bbox": [
+        357.21,
+        216.72,
+        371.24,
+        231.33
+      ]
+    },
+    {
+      "class": "animal",
+      "confidence": 0.4997,
+      "bbox": [
+        362.96,
+        7.18,
+        378.65,
+        22.68
+      ]
+    },
+    {
+      "class": "animal",
+      "confidence": 0.3422,
+      "bbox": [
+        342.74,
+        216.24,
+        358.36,
+        232.62
+      ]
+    },
+    {
+      "class": "animal",
+      "confidence": 0.3078,
+      "bbox": [
+        368.53,
+        84.31,
+        387.95,
+        101.94
+      ]
+    },
+    {
+      "class": "animal",
+      "confidence": 0.2976,
+      "bbox": [
+        73.54,
+        21.59,
+        90.93,
+        37.81
+      ]
+    },
+    {
+      "class": "animal",
+      "confidence": 0.2972,
+      "bbox": [
+        334.31,
+        216.4,
+        350.83,
+        233.06
+      ]
+    },
+    {
+      "class": "animal",
+      "confidence": 0.2911,
+      "bbox": [
+        368.65,
+        150.21,
+        387.62,
+        167.67
+      ]
+    }
+  ],
+  "integration_inference": "PASSED",
+  "note": "Predicted detections only; no ground-truth accuracy measured."
+}
