@@ -1,0 +1,19 @@
+﻿# Trained model checkpoints
+models/
+*.pt
+*.pth
+*.pth.zip
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local environments
+.venv/
+venv/
+.env
+.env.*
+
+# Streamlit local settings
+.streamlit/secrets.toml
