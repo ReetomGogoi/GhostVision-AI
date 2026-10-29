@@ -63,13 +63,13 @@ def render_header() -> None:
     st.subheader("Dual-Modality AI Perception: RGB Camouflage & Thermal Wildlife Detection")
     st.markdown(
         """
-        **GhostVision-AI** is an intelligent vision system designed to detect and localize cryptic 
-        and nocturnal wildlife across challenging wilderness environments. It provides two independent, 
+        **GhostVision-AI** is an intelligent vision system designed to detect and localize cryptic
+        and nocturnal wildlife across challenging wilderness environments. It provides two independent,
         rigorously validated perception pipelines:
-        
-        - **🌿 RGB Camouflaged Object Segmentation:** Leverages a U-Net architecture with a ResNet34 encoder 
+
+        - **🌿 RGB Camouflaged Object Segmentation:** Leverages a U-Net architecture with a ResNet34 encoder
           to segment camouflaged animals blending seamlessly into complex natural surroundings.
-        - **🔥 Thermal Wildlife Detection:** Utilizes a lightweight YOLO11n object detector to locate nocturnal 
+        - **🔥 Thermal Wildlife Detection:** Utilizes a lightweight YOLO11n object detector to locate nocturnal
           and obscured warm-bodied fauna in thermal infrared imagery.
         """
     )
@@ -78,9 +78,9 @@ def render_header() -> None:
 
 def render_sidebar() -> dict[str, Any]:
     st.sidebar.header("⚙️ Configuration")
-    
+
     defaults = get_default_checkpoint_paths()
-    
+
     st.sidebar.markdown("### 🗂️ Model Checkpoints")
     st.sidebar.caption(
         "Set paths below or configure environment variables (`GHOSTVISION_RGB_BASELINE`, "
@@ -107,7 +107,7 @@ def render_sidebar() -> dict[str, Any]:
 
     st.sidebar.markdown("---")
     st.sidebar.markdown("### 🎯 Inference Settings")
-    
+
     thermal_conf = st.sidebar.slider(
         "Thermal Confidence Threshold",
         min_value=0.05,
@@ -120,7 +120,7 @@ def render_sidebar() -> dict[str, Any]:
     # Checkpoint existence status badges
     st.sidebar.markdown("---")
     st.sidebar.markdown("### 🔎 Checkpoint Status")
-    
+
     col_stat1, col_stat2 = st.sidebar.columns(2)
     with col_stat1:
         st.caption("RGB Baseline")
@@ -128,7 +128,7 @@ def render_sidebar() -> dict[str, Any]:
             st.success("Found", icon="✅")
         else:
             st.warning("Not loaded", icon="⚠️")
-            
+
         st.caption("Thermal")
         if thermal_input and Path(thermal_input).is_file():
             st.success("Found", icon="✅")
@@ -164,7 +164,7 @@ def render_metrics_tab() -> None:
     with col1:
         st.subheader("🌿 RGB Camouflage Segmentation")
         st.caption(f"**Dataset:** {RGB_TEST_METRICS['dataset']} | **Evaluated Images:** {RGB_TEST_METRICS['images_evaluated']:,}")
-        
+
         rgb_data = []
         for m in RGB_TEST_METRICS["models"]:
             rgb_data.append({
@@ -182,7 +182,7 @@ def render_metrics_tab() -> None:
     with col2:
         st.subheader("🔥 Thermal Wildlife Detection")
         st.caption(f"**Dataset:** {THERMAL_TEST_METRICS['dataset']} | **Held-out Test Images:** {THERMAL_TEST_METRICS['test_images']:,}")
-        
+
         kpi1, kpi2, kpi3, kpi4 = st.columns(4)
         kpi1.metric("Precision", f"{THERMAL_TEST_METRICS['precision'] * 100:.2f}%")
         kpi2.metric("Recall", f"{THERMAL_TEST_METRICS['recall'] * 100:.2f}%")
@@ -267,7 +267,7 @@ def run_rgb_inference_pipeline(
         # Render outputs
         if isinstance(result, ApplicationSegmentationResult):
             st.success(f"Segmentation complete using {result.model_name.capitalize()} model!")
-            
+
             c1, c2, c3 = st.columns(3)
             with c1:
                 st.markdown("#### 1. Input Image")
@@ -345,7 +345,7 @@ def run_thermal_inference_pipeline(
 
         if isinstance(result, ThermalApplicationResult):
             st.success(f"Thermal detection complete! Identified {result.animal_count} animal(s).")
-            
+
             c1, c2 = st.columns(2)
             with c1:
                 st.markdown("#### 1. Original Thermal Image")
@@ -360,7 +360,7 @@ def run_thermal_inference_pipeline(
             st.markdown("#### 📋 Detection Summary")
             col_m1, col_m2 = st.columns([1, 3])
             col_m1.metric("Animal Count", result.animal_count)
-            
+
             with col_m2:
                 if result.detections:
                     det_data = [
@@ -450,12 +450,12 @@ def main() -> None:
         st.markdown(
             """
             ### Unified Routing Pipeline
-            GhostVision-AI uses `GhostVisionApplication` from `ghostvision.application` to route requests 
+            GhostVision-AI uses `GhostVisionApplication` from `ghostvision.application` to route requests
             cleanly without modifying raw model architectures or translating incompatible result shapes:
-            
+
             - **RGB Pipeline:** Output contains segmentation masks and overlays via `ApplicationSegmentationResult`.
             - **Thermal Pipeline:** Output contains discrete bounding boxes and confidence scores via `ThermalApplicationResult`.
-            
+
             ### Checkpoint Configuration
             For production deployments and CI, define the following environment variables:
             ```bash
@@ -464,7 +464,7 @@ def main() -> None:
             export GHOSTVISION_THERMAL_CHECKPOINT="/path/to/best.pt"
             ```
             Alternatively, set these paths directly via the Streamlit configuration sidebar.
-            
+
             ### Safety & Privacy Guarantees
             - Checkpoint weights and user uploads are never committed or persisted permanently.
             - All user uploads are processed inside isolated temporary directories and purged immediately.
@@ -475,4 +475,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
