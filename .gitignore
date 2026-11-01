@@ -14,6 +14,13 @@ __pycache__/
 venv/
 .env
 .env.*
+!.env.example
+!frontend/.env.example
+
+# React / Vite frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
 
 # Streamlit local settings
 .streamlit/secrets.toml

@@ -56,3 +56,15 @@ Streamlit application intact.
 
 Configuration, launch commands, endpoint examples, and response schemas are
 documented in [`docs/api.md`](docs/api.md).
+
+## React Workstation
+
+The React 18 and TypeScript workstation in `frontend/` connects directly to
+the FastAPI endpoints. It provides validated drag-and-drop uploads, RGB mask
+and overlay comparison, thermal bounding-box review, confidence details, and
+downloadable visualizations generated from the real API response.
+
+Frontend setup and validation commands are documented in
+[`docs/web_application.md`](docs/web_application.md). Interface design
+attribution is recorded in
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
