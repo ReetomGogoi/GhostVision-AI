@@ -47,3 +47,12 @@ Run the full automated test suite (including UI tests and application integratio
 ```bash
 python -m pytest
 ```
+
+## FastAPI Backend
+
+A separate FastAPI transport is available for future React and mobile clients.
+It reuses `GhostVisionApplication`, keeps inference server-side, and leaves this
+Streamlit application intact.
+
+Configuration, launch commands, endpoint examples, and response schemas are
+documented in [`docs/api.md`](docs/api.md).
