@@ -27,8 +27,20 @@ export default function App() {
   useEffect(() => {
     const controller = new AbortController();
     getHealth(controller.signal)
-      .then(setHealth)
-      .catch(() => setHealthError(true));
+      .then((data) => {
+        setHealth(data);
+        setHealthError(false);
+      })
+      .catch((caught: unknown) => {
+        if (
+          controller.signal.aborted ||
+          (caught instanceof DOMException && caught.name === "AbortError") ||
+          (caught instanceof Error && caught.name === "AbortError")
+        ) {
+          return;
+        }
+        setHealthError(true);
+      });
     return () => controller.abort();
   }, []);
 
